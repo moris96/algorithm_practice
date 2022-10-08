@@ -50,3 +50,24 @@ function largestPrimeFactor(num) {
 }
 console.log(largestPrimeFactor(10))
 */ 
+
+function sortSortedArrays(arr1, arr2){
+    let sortedCombo = []
+    while(arr1.length && arr2.length){
+        if(arr1[0] > arr2[0]){
+            sortedCombo.push(arr2[0])
+            arr2.shift()
+        }
+    }
+}
+
+function doubleAll(arr) {
+    let doubled = [];
+    arr.forEach(num => {
+        doubled.push(num * 2);
+    });
+    doubled.forEach(num => {
+        console.log(num)
+    })
+    return doubled;
+}
