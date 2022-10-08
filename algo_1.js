@@ -36,4 +36,17 @@ function largestPrimeFactor(n){
     }
     console.log(i)
 }
-largestPrimeFactor(100)
+largestPrimeFactor(600851475143)
+
+/*
+function largestPrimeFactor(num) {
+    // Identify which numbers from 2 up until, and including, the number
+    // are prime and are factors of the number
+    if(prime(num)) return num;
+    for(let i = num/2; i > 1; i--) {
+        if(factor(i, num) && prime(i)) return i;
+    }
+    return "There are no prime factors of this number"
+}
+console.log(largestPrimeFactor(10))
+*/ 
