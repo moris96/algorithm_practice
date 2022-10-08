@@ -71,3 +71,34 @@ function doubleAll(arr) {
     })
     return doubled;
 }
+
+firstTime = '12:01:00 AM'
+secondTime = '12:01:00 PM'
+function timeConversion(s){
+    const [time, mod] = s.split(' ')
+    let [hours, minutes, seconds] = time.split(':')
+    if(hours==='12'){
+        hours = '00'
+    } 
+    if(mod === 'PM'){
+        hours = parseInt(hours, 10) + 12
+    }
+    return `${hours}:${minutes}:${seconds}`
+}
+console.log(timeConversion(firstTime))
+
+
+function climbingLeaderboard(ranked, player) {
+    for(let i = 0; i < player.length; i++) {
+        let duplicates = 0;
+        for(let j = 0; j < ranked.length; j++) {
+            if(ranked[j] === ranked[j - 1]) {
+                duplicates++;
+            } else if(player[i] >= ranked[j]) {
+                player[i] = j + 1 - duplicates;
+                break;
+            } else if(j + 1 === ranked.length) player[i] = ranked.length + 1 - duplicates;
+        }
+    }
+    return player;
+}
